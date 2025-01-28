@@ -13,6 +13,9 @@ public:
     // Insert method adds a value to the end of the list while ensuring thread synchronization.
     void insert(int value, int threadId);
 
+    // Delete method removes a node with the given value from the list.
+    void deleteNode(int value, int threadId);
+
     // Print method prints all the values in the linked list.
     void print();
 
@@ -26,5 +29,5 @@ private:
     };
 
     std::shared_ptr<Node> head;    // Pointer to the head (first node) of the list.
-    FilterLock filterLock;         // Filter lock for thread synchronization during insert operations.
+    FilterLock filterLock;         // Filter lock for thread synchronization during insert and delete operations.
 };
